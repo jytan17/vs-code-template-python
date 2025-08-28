@@ -1,0 +1,39 @@
+{
+  "name": "py-uv-ruff",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
+  },
+  "postCreateCommand": "/bin/bash .devcontainer/setup.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-keymap",
+        "ms-toolsai.jupyter-renderers",
+        "charliermarsh.ruff",
+        "GitHub.github-vscode-theme",
+        "PKief.material-icon-theme",
+        "anthropic.claude-code"
+      ],
+      "settings": {
+        "workbench.colorTheme": "GitHub Dark Default",
+        "workbench.iconTheme": "material-icon-theme",
+        "editor.fontWeight": "bold",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff",
+          "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit",
+            "source.fixAll.ruff": "explicit"
+          }
+        }
+      }
+    }
+  },
+  "remoteUser": "vscode"
+}
